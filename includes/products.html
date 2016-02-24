@@ -1,0 +1,150 @@
+<div ng-app="products">
+      <div ng-controller="ProductsController">
+      <form>
+        <h1>Filtrer les produits</h1>
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{type_search}} <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><span ng-click="setType('Contient')">Contient</a></li>
+              <li><span ng-click="setType('Commence')">Commence par</a></li>
+              <li><span ng-click="setType('Termine')">Termine par</a></li>
+              <li><span ng-click="setType('Egale')">Est égale à</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+          <input type="text" class="form-control" aria-label="..." ng-model="name" ng-keyup="loadProducts()" placeholder="Nom du produit">
+      </div><!-- /input-group -->
+
+      <div class="input-group categories">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{label_category ? label_category : 'Recherche par catégorie'}} <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><span ng-click="choiceCategory(false);">Aucune</a></li>
+              <li ng-repeat="category in categories" ><span ng-click="choiceCategory(category.id_category);">{{category.name}}</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+      </div><!-- /input-group -->
+      <h3>Avancés</h3>
+
+      <div class="input-group avanced">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{content_double ? label[content_double] : 'Contenu en double'}}<span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><span ng-click="setContentDouble(false)">NON</span></li>
+              <li><span ng-click="setContentDouble('name')">Nom du produit</span></li>
+              <li><span ng-click="setContentDouble('meta_title')">Meta title</span></li>
+              <li><span ng-click="setContentDouble('meta_description')">Meta description</span></li>
+              <li><span ng-click="setContentDouble('description')">Description</span></li>
+              <li><span ng-click="setContentDouble('description_short')">Description courte</span></li>
+              <li><span ng-click="setContentDouble('meta_keywords')">Meta keywords</span></li>
+            </ul>
+          </div><!-- /btn-group -->
+      </div><!-- /input-group -->
+
+      <div class="input-group avanced">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{content_short ? label[content_short] : 'Contenu trop court'}}<span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><span ng-click="setContentShort(false)">NON</span></li>
+              <li><span ng-click="setContentShort('name')">Nom du produit</span></li>
+              <li><span ng-click="setContentShort('meta_title')">Meta title</span></li>
+              <li><span ng-click="setContentShort('meta_description')">Meta description</span></li>
+            </ul>
+          </div><!-- /btn-group -->
+      </div><!-- /input-group -->
+
+      <div class="input-group avanced">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actif Uniquement  : {{actif ? 'OUI' : 'NON'}}<span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><span ng-click="setActif(true)">OUI</span></li>
+              <li><span ng-click="setActif(false)">NON</span></li>
+          </div><!-- /btn-group -->
+      </div><!-- /input-group -->
+
+      <div class="input-group avanced">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{empty ? label[empty] : 'Champs vide'}} <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><span ng-click="setEmpty(false)">NON</span></li>
+              <li><span ng-click="setEmpty('meta_title')">Meta title</span></li>
+              <li><span ng-click="setEmpty('meta_description')">Meta description</span></li>
+              <li><span ng-click="setEmpty('description')">Description</span></li>
+              <li><span ng-click="setEmpty('description_short')">Description courte</span></li>
+              <li><span ng-click="setEmpty('meta_keywords')">Meta keywords</span></li>
+            </ul>
+          </div><!-- /btn-group -->
+      </div><!-- /input-group -->
+
+      <div class="input-group avanced">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sans images : {{images ? 'OUI' : 'NON'}}<span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><span ng-click="setImages(true)">OUI</span></li>
+              <li><span ng-click="setImages(false)">NON</span></li>
+            </ul>
+          </div><!-- /btn-group -->
+      </div><!-- /input-group -->
+
+      <table  class="box-table-a pagination">
+      <tfoot>
+        <tr>
+          <td>Page(s) : </td>
+          <td>
+            <div id="liste_page">
+             <input ng-repeat="(k,filter) in tab_index" type="button" class="npage" ng-click="changePage(filter)" value="{{filter}}">
+            </div>
+          </td>
+          <td>
+            <div class="input-group avanced">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{page}}<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                <li ng-repeat="(k,filter) in filters.nbr_page"><span ng-click="changePage(filter)">{{filter}}</span></li>
+                </ul>
+              </div>
+            </div>
+          </td>
+          <td colspan="5">
+            <span id="nbr_result">Nombre des résultats : {{total_result}} - Nombres de pages {{nbr_page}}</span>
+          </td>
+        </tr>
+      </tfoot>
+      </table>
+
+      </form>
+
+          <table class="table">
+            <thead class="thead-inverse">
+              <tr>
+                <th>Action</th>
+                <th>Photo</th>
+                <th>Référence</th>
+                <th>Nom du produit</th>
+                <th>Meta title</th>
+                <th>Meta description</th>
+                <th>Description</th>
+                <th>Description courte</th>
+                <th>URL réécrite</th>
+                <th>Meta Keywords</th>
+              </tr>
+            </thead>
+            <tbody ng-show="products.length" ng-cloak>
+              <tr ng-repeat="(k,product) in products" ng-init="p = k">
+                <td><span class="input-group-btn"> <button ng-click="updateProduct(p)" type="button" class="btn btn-default">Modifier</button></td>
+                <td><img src="http://{{product.image}}"></td>
+                <td>{{product.reference}}</td>
+                <td><input ng-model="products[p].name" type="text" class="form-control" value="{{product.name}}"></td>
+                <td><input ng-model="products[p].meta_title"  type="text" class="form-control" value="{{product.meta_title}}"></td>
+                <td><textarea ng-model="products[p].meta_description"  class="form-control">{{product.meta_description}}</textarea></td>
+                <td><textarea ng-model="products[p].description"  class="form-control">{{product.description}}</textarea></td>
+                <td><textarea ng-model="products[p].description_short"  class="form-control">{{product.description_short}}</textarea></td>
+                <td><input ng-model="products[p].link_rewrite"   type="text" class="form-control" value="{{product.link_rewrite}}"></td>
+                <td><input ng-model="products[p].meta_keywords"   type="text" class="form-control" value="{{product.meta_keywords}}"></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="encart_check" ng-show="showajax">Produit modifié avec succés !</div>
+        </div>
+
+</div>

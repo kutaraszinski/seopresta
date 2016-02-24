@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="routeApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap 3, from LayoutIt!</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <span>OptimizMyPresta</span>
+  <nav></nav>
+</header>
+  
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 menu">
+      <h2>Gestion du contenu</h2>
+      <ul class="nav nav-sidebar">
+        <li><a href="#/products"><span class="glyphicon glyphicon-edit"></span>Produits</a></li>
+        <li><a href="#/categories"><span class="glyphicon glyphicon-folder-open"></span>Catégories</a></li>
+        <li><a href="#/images"><span class="glyphicon glyphicon-picture"></span>Images</a></li>
+      </ul>
+      <h2>Optimisation SEO</h2>
+      <ul class="list-group">
+        <li class="list-group-item"><a href="#/addpage">Choisir une page <span class="glyphicon glyphicon-plus"></span></a></li>
+        <li class="list-group-item">Choisir des mots-clés <span class="glyphicon glyphicon-plus"></span></li>
+        <li class="list-group-item"><div class="input-group"> <input type="text" class="form-control" placeholder="Mots clés, nom d'une page"> <span class="input-group-btn"> <button class="btn btn-default" type="button">Go!</button> </span> </div></li>
+      </ul>
+
+    </div>
+    <div class="col-md-10">
+
+
+      <div class="main" ng-view>
+      </div>
+
+      
+
+    </div>
+  </div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/routes.js"></script>
+<script src="js/controllers/ProductsController.js"></script>
+<script src="js/controllers/CategoriesController.js"></script>
+<script src="js/controllers/ImagesController.js"></script>
+<script src="js/controllers/AddpageController.js"></script>
+<script src="js/controllers/PageController.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<div class="row">
+	<div class="col-md-12">
+		<h1>Choisir des mots clés</h1>
+		<hr />
+	</div>
+</div>
+
+<div class="row keywords">
+	<div class="keywords">
+	<div class="col-md-12">
+		<div class="encart_main">
+
+			<p>Vous avez choisi le <strong>mot-clé principal</strong></p>
+			<span class="key"><span class="kkey">{{infos['main']['keyword']}}</span></span>
+		</div>
+
+		<hr />
+
+		<h2>Mots-clés secondaires et un champ lexical correspondant</h2>
+		<p><span class="glyphicon glyphicon-question-sign"></span>Nous vous conseillons de consulter l'aide en haut à droite pour bien gérer cette étape importante.</p>
+		<h3>Nos suggestions <span class="glyphicon glyphicon-grain"></span></h3>
+		<div class="encart_suggestion">
+			<div class="well clearfix">
+				<div ng-repeat="(k, keyword) in keywords" data-id="{{keyword.id}}" data-keyword="{{keyword.keyword}}" class="keyword-item" ng-click="select($event)">{{keyword.keyword}}<span class="glyphicon glyphicon-align-justify"></span></div>
+			</div>
+		</div>
+
+	</div>
+	<div class="add_key">
+		<div class="col-md-12">
+			<div class="add_remove"><span ng-click="up($event)" class="glyphicon glyphicon-arrow-up"></span><span  ng-click="down($event)" class="glyphicon glyphicon-arrow-down"></span></div>
+			<h3>Mot clés secondaires <span class=""></span></h3>
+			<div class="well clearfix keywords_content">
+
+				<div ng-repeat="(k, keyword) in keywords_secondaire" data-id="{{keyword.id}}" class="keyword-item" data-keyword="{{keyword.keyword}}" ng-click="select($event)">{{keyword.keyword}}<span class="glyphicon glyphicon-align-justify"></span></div>
+
+			</div>
+		</div>
+
+		<!-- <div class="col-md-6">
+			<div class="add_remove"><span  ng-click="upL()" class="glyphicon glyphicon-arrow-up"></span><span  ng-click="downL()" class="glyphicon glyphicon-arrow-down"></span></div>
+			<h3>Champ lexical <span class=""></span></h3>
+			<div class="well clearfix keywords_content_lexical">
+
+				<div ng-repeat="(k,keyword) in keywords_lexical" class="keyword-item" data-id="{{keyword.id}}" data-name="{{keyword.name}}" ng-click="select($event)">{{keyword.name}}<span class="glyphicon glyphicon-align-justify"></span></div>
+
+			</div>
+		</div> -->
+	</div>
+	<div class="col-md-12">
+		<button type="submit" class="btn btn-primary savekeyword" ng-click="savekeywordSecondaire()"><span class="glyphicon glyphicon-ok"></span> Valider</button>
+	</div>
+	
+	</div>
+</div>

@@ -1,0 +1,452 @@
+<div ng-app="page" id="page">
+  <div ng-controller="PageController">
+
+      <form>
+        <h1>Optimiser la page "{{infos['main']['url']}}"<br />
+        	<span>Mot clé principal : {{infos['main']['keyword']}}</span></h1>
+        <span class="btn btn-default" id="add_key_sec" ng-click="addkeywords()">Ajouter des mots clés secondaires</span>
+      </form>
+
+      <div class="row">
+		<div class="col-md-4 score">
+
+					<p>
+						Score <br /> 
+						<b>Visibilité</b> 
+						<span class="glyphicon glyphicon-question-sign"></span>
+					</p>
+
+					<div class="rond" > 
+						<div class="score-numerator ng-binding">0</div> 
+						<div class="score-denominator"> pts/100 </div>
+					</div>
+
+		</div>
+
+		<div class="col-md-4">
+
+			<p>CRITÈRES <strong> à améliorer <span class="glyphicon glyphicon-question-sign"></span></strong> </p>
+			<div class="encart_critere orange">
+				<p>9</p>
+				<span class="text">Parmi les 16 critères de votre page</span>
+			</div> 
+
+
+		</div>
+		<div class="col-md-4">
+
+			<ul>
+				<li>
+					<div class="encart_critere orange">
+						<p>57</p>
+						<span class="text">pts/100</span>
+					</div>
+					<p>8 critères <strong>techniques</strong><span class="glyphicon glyphicon-chevron-right"></span></p>
+				</li>
+				<li>
+					<div class="encart_critere rouge">
+						<p>20</p>
+						<span class="text">pts/100</span>
+					</div>
+					<p>5 critères <strong>de contenu</strong><span class="glyphicon glyphicon-chevron-right"></span></p>
+				</li>
+				<li>
+					<div class="encart_critere rouge">
+						<p>1</p>
+						<span class="text">pts/100</span>
+					</div>
+					<p>3 critères <strong>de liens</strong><span class="glyphicon glyphicon-chevron-right"></span></p>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 classement">
+			<h2>Classement Google <span class="glyphicon glyphicon-question-sign"><span></h2>
+			<ul class="nav navbar-nav col-md-6">
+					<li class="dropdown close"> 
+						<span aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">Mots-clés secondaires <span class="caret"></span></span> 
+						<ul class="dropdown-menu"> 
+							<li><span ng-click="viewClassement('all')">Afficher tout</span></li>
+							<li ng-repeat="(key, value) in keywords_secondaire"><span ng-click="viewClassement(value.id)">{{value.keyword}}</span></li>
+						</ul>
+					</li>
+			</ul>
+			<div class="encart_graph"></div>
+		</div>
+		<div class="col-md-6">
+			<h2>Score moyen <span class="glyphicon glyphicon-question-sign"></span></h2>
+			<div class="encart_graph"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 navcritere">
+			<ul>
+				<li>
+					<div class="encart_critere orange">
+						<p>57</p>
+						<span class="text">pts/100</span>
+					</div>
+					<p><a href="javascript:window.scrollTo(0, document.getElementById('technique').offsetTop);" du-smooth-scroll>8 critères <strong>techniques</strong><span class="glyphicon glyphicon-menu-down"></span></a></p>
+				</li>
+				<li>
+					<div class="encart_critere rouge">
+						<p>20</p>
+						<span class="text">pts/100</span>
+					</div>
+					<p><a href="javascript:window.scrollTo(0, document.getElementById('contenu').offsetTop);" du-smooth-scroll>5 critères <strong>de contenu</strong><span class="glyphicon glyphicon-menu-down"></span></a></p>
+				</li>
+				<li>
+					<div class="encart_critere rouge">
+						<p>1</p>
+						<span class="text">pts/100</span>
+					</div>
+					<p><a href="javascript:window.scrollTo(0, document.getElementById('link').offsetTop);" du-smooth-scroll>3 critères <strong>de liens</strong><span class="glyphicon glyphicon-menu-down"></span></a></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="optimisation">
+		<h2 id="technique">Critères Technique</h2>
+
+		<h3>La balise TITLE</h3>
+
+		<div class="encart vert">
+						<div class="content">
+							<h4>Présence d'une balise TITLE dans la page</h4>
+							<p>Votre valise TITLE est : "Avocat en droit de la famille à Montpellier (34)".</p>
+						</div>
+						<div class="right_encart">
+
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">25 / 25 pts</span>
+							</button>
+
+						</div>
+		</div>
+
+		<div class="encart rouge">
+						<div class="content">
+							<h4>Présence du mot-clé principal dans la balise TITLE</h4>
+							<p>Votre mot-clé principal, "avocat montpellier", n'est pas présent dans votre balise TITLE : "Avocat en droit de la famille à Montpellier (34)".</p>
+						</div>
+						<div class="right_encart">
+
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">0 / 25 pts</span>
+							</button>
+
+						</div>
+		</div>
+
+		<div class="encart vert">
+						<div class="content">
+							<h4>Longueur de la balise TITLE</h4>
+							<p>La longueur de votre balise TITLE est bonne.</p>
+						</div>
+						<div class="right_encart">
+
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">3 / 3 pts</span>
+							</button>
+
+						</div>
+		</div>
+
+		<h3>La balise H1</h3>
+
+		<div class="encart vert">
+						<div class="content">
+							<h4>Présence d'une balise H1 dans la page</h4>
+							<p>Votre balise H1 est : "Avocat en droit de la famille à Montpellier"</p>
+						</div>
+						<div class="right_encart">
+
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">15 / 15 pts</span>
+							</button>
+						</div>
+		</div>
+		<div class="encart rouge">
+						<div class="content">
+							<h4>Présence du mot-clé principal dans la balise H1</h4>
+							<p>Votre mot-clé principal, "avocat montpellier", n'est pas présent dans votre balise H1</p>
+						</div>
+						<div class="right_encart">
+
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">0 / 15 pts</span>
+							</button>
+						</div>
+		</div>
+
+		<h3>La métadonnée</h3>
+
+		<div class="encart vert">
+						<div class="content">
+							<h4>La page a une métadonnée description</h4>
+							<p>Votre métadonnée description est : "Maître Florine Datessen intervient devant les tribunaux pour défendre vos intérêts en cas de divorce ou de séparation : divorce par consentement ; le sort des enfants, etc."</p>
+						</div>
+						<div class="right_encart">
+
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">15 / 15 pts</span>
+							</button>
+						</div>
+		</div>
+
+		<div class="encart vert">
+						<div class="content">
+							<h4>Longueur de la métadonnée description</h4>
+							<p>Le nombre de caractères de la metadonnée description de votre page ne dépasse pas le maximum autorisé.</p>
+						</div>
+						<div class="right_encart">
+
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">15 / 15 pts</span>
+							</button>
+						</div>
+		</div>
+
+		<h3>Les images</h3>
+		<div class="encart rouge">
+						<div class="content">
+							<h4>La majorité des images ont un texte alternatif 'Alt' rempli</h4>
+							<p>Vous avez actuellement 5 images sans 'Alt'.</p>
+						</div>
+						<div class="right_encart">
+
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">2 / 10 pts</span>
+							</button>
+						</div>
+		</div>
+
+		<h2 id="contenu">Critères Contenu</h2>
+
+		<div class="encart vert">
+						<div class="content">
+							<h4>Contenu dupliqué externe</h4>
+							<p>Aucun contenu dupliqué pour cette page.</p>
+						</div>
+						<div class="right_encart">
+
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">10 / 10 pts</span>
+							</button>
+						</div>
+		</div>
+
+		<div class="encart orange">
+						<div class="content">
+							<h4>Nombre de mots dans la page</h4>
+							<p>Votre page contient actuellement 164 mots sur les 300 minimum.</p>
+						</div>
+						<div class="right_encart">
+
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">2 / 10 pts</span>
+							</button>
+						</div>
+		</div>
+
+		<div class="encart rouge">
+						<div class="content">
+							<h4>Présence du mot-clé principal dans les 150 premiers mots du contenu de la page</h4>
+							<p>Votre mot-clé principal "avocat montpellier" n'est pas présent dans les 150 premiers mots du contenu de votre page.</p>
+						</div>
+						<div class="right_encart">
+
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">2 / 10 pts</span>
+							</button>
+						</div>
+		</div>
+		<div class="encart vert">
+						<div class="content">
+							<h4>Taux de présence du mot-clé principal dans le contenu de la page</h4>
+							<p>La densité de votre mot clé principal "avocat montpellier" dans votre page est de 0. La densité à atteindre est située entre 15 et 25. Votre mot-clé principal n'est pas assez présent dans le contenu.</p>
+						</div>
+						<div class="right_encart">
+
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">2 / 10 pts</span>
+							</button>
+						</div>
+		</div>
+		<div class="encart vert">
+						<div class="content">
+							<h4>Taux de présence des mots-clés secondaires et lexicaux dans le contenu de la page</h4>
+							<p>Chacun de vos mots-clés secondaires et lexicaux doit être présent une fois dans le contenu de votre page. Ce n'est pas le cas pour les mots-clés suivant indiqués ci-dessous : </p>
+						</div>
+						<div class="right_encart">
+
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">2 / 10 pts</span>
+							</button>
+						</div>
+		</div>
+
+		<h2 id="link">Optimisation de vos liens</h2>
+
+		<h4>Tableau des principaux liens pointant vers ma page</h4>
+		<div class="encart_link">
+			<ul>
+				<li>Tableau par nom de domaine</li>
+				<li>Tableau par texte de lien</li>
+			</ul>
+			<div class="content_link">
+				<p><strong>Vous n'avez aucun lien existant vers votre page.</strong></p>
+			</div>
+		</div>
+
+		<div class="encart rouge">
+						<div class="content">
+							<h4>Nombre de liens externes</h4>
+							<p>Votre nombre de liens externes mériterait d'être augmenté (0 sites font des liens vers cette page) ! Les liens vous apportent de la notoriété. Votre page a une notoriété de 1. Or, la notoriété à atteindre pour votre page serait de 32.</p>
+						</div>
+						<div class="right_encart">
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">11 / 60 pts</span>
+							</button>
+						</div>
+		</div>
+
+		<div class="encart vert">
+						<div class="content">
+							<h4>Sanction Google Penguin</h4>
+							<p>Votre page n'est pas exposée à la sanction Google Penguin.</p>
+						</div>
+						<div class="right_encart">
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">2 / 10 pts</span>
+							</button>
+						</div>
+		</div>
+
+		<div class="encart gris">
+						<div class="content">
+							<h4>Présence du mot clé principal dans les ancres des liens</h4>
+							<p>Vous n'avez aucun lien externe vers votre page. Commencez par en récupérer. Pour cela, veuillez consulter le guide du critère 'Nombre de liens externes' en cliquant sur le bouton 'Comment améliorer' de ce critère.</p>
+						</div>
+						<div class="right_encart">
+							<button class="btn btn-default" type="button">
+								
+								<span class="text">Améliorer</span>
+								<span class="glyphicon glyphicon-menu-right"></span>
+								<span class="score_encart">0 / 40 pts</span>
+							</button>
+						</div>
+		</div>
+
+		<h3>Nouveaux liens pour mon site</h3>
+		<p><span class="glyphicon glyphicon-question-sign"></span> Vous trouverez ci-dessous une liste des sites pouvant faire des liens intéressants vers votre page. Tous ces sites font actuellement des liens vers vos concurrents... Contactez-les en suivant la méthode expliquée dans le critère "Nombre de liens externes".</p>
+		<div class="encart_link_externe">
+			<span class="search">
+				<div class="input-group"> 
+					<input type="text" placeholder="Nom de domaine" class="form-control"> 
+					<span class="input-group-btn"> 
+						<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button> 
+					</span> 
+				</div>
+			</span>
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Nom de domaine</th>
+						<th>Puissance</th>
+						<th>Type</th>
+						<th>Contact</th>
+						<th>Etat</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+				</div>
+		</div>
+
+		<script type="text/javascript-lazy">
+		            var p = $('.navcritere').position();
+		            topnav = p.top;
+
+		             var $window = $(window);
+
+		             $window.scroll(function () {
+
+		                 if ($window.scrollTop() >= topnav)
+		                 {
+		                    $('.navcritere').addClass('fixed');
+		                 }
+		                 else
+		                 {
+		                 	$('.navcritere').removeClass('fixed');
+		                 }
+
+		             });
+		</script>
+
+		<div id="pop" ng-if="showchoicekeywords">
+			<div ng-include="'includes/add_keywords.html'" class="pop"></div>
+		</div>
+
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<div ng-app="images">
+      <div ng-controller="ImagesController">
+      	  <form>
+			<h1>Filtrer les images</h1>
+	        <div class="input-group">
+	          <div class="input-group-btn">
+	            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{type_search}} <span class="caret"></span></button>
+	            <ul class="dropdown-menu">
+	              <li><span ng-click="setType('Contient')">Contient</a></li>
+	              <li><span ng-click="setType('Commence')">Commence par</a></li>
+	              <li><span ng-click="setType('Termine')">Termine par</a></li>
+	              <li><span ng-click="setType('Egale')">Est égale à</a></li>
+	            </ul>
+	          </div><!-- /btn-group -->
+	          <input type="text" class="form-control" aria-label="..." ng-model="name" ng-keyup="loadImages()" placeholder="Nom du produit">
+	        </div><!-- /input-group -->
+
+	       
+
+
+
+		    <table  class="box-table-a pagination">
+		      <tfoot>
+		        <tr>
+		          <td>Page(s) : </td>
+		          <td>
+		            <div id="liste_page">
+		             <input ng-repeat="(k,filter) in tab_index" type="button" class="npage" ng-click="changePage(filter)" value="{{filter}}">
+		            </div>
+		          </td>
+		          <td>
+		            <div class="input-group avanced">
+		              <div class="input-group-btn">
+		                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{page}}<span class="caret"></span></button>
+		                <ul class="dropdown-menu">
+		                <li ng-repeat="(k,filter) in filters.nbr_page"><span ng-click="changePage(filter)">{{filter}}</span></li>
+		                </ul>
+		              </div>
+		            </div>
+		          </td>
+		          <td colspan="5">
+		            <span id="nbr_result">Nombre des résultats : {{total_result}} - Nombres de pages {{nbr_page}}</span>
+		          </td>
+		        </tr>
+		      </tfoot>
+      		</table>
+    	  </form>
+    	  <table class="table">
+            <thead class="thead-inverse">
+              <tr>
+                <th>Action</th>
+				<th>images</th>
+				<th>Nom du produit</th>
+				<th>Legend</th>
+              </tr>
+            </thead>
+            <tbody ng-show="images.length" ng-cloak>
+              <tr  ng-repeat="(k,image) in images"  ng-init="p = k">
+                <td><span class="input-group-btn"> <button ng-click="updateImages(p)" type="button" class="btn btn-default">Modifier</button></td>
+                <td><img src="http://{{image.image}}"></td>
+                <td>{{image.name}}</td>
+                <td><input ng-model="images[p].legend"  type="text" class="form-control" value="{{image.legend}}"></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="encart_check" ng-show="showajax">Images modifié avec succés !</div>
+      </div>
+</div>

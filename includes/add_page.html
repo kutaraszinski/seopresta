@@ -1,0 +1,77 @@
+<div ng-app="addpage">
+      <div ng-controller="AddpageController">
+      <form>
+        <h1>Filtrer les pages</h1>
+    
+
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{type_page ? label[type_page] : 'Recherche par type de page'}} <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><span ng-click="setTypePage(false)">Aucune</a></li>
+              <li><span ng-click="setTypePage('category')">Catégories</a></li>
+              <li><span ng-click="setTypePage('product')">Produits</a></li>
+              <li><span ng-click="setTypePage('cms')">CMS</a></li>
+              <li><span ng-click="setTypePage('autres')">Autres</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+          <input type="text" class="form-control" aria-label="..." ng-model="name" ng-keyup="loadPages()" placeholder="Recherche ..">
+        </div><!-- /input-group -->
+
+         <table  class="box-table-a pagination">
+              <tfoot>
+                <tr>
+                  <td>Page(s) : </td>
+                  <td>
+                    <div id="liste_page">
+                     <input ng-repeat="(k,filter) in tab_index" type="button" class="npage" ng-click="changePage(filter)" value="{{filter}}">
+                    </div>
+                  </td>
+                  <td>
+                    <div class="input-group avanced">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{page}}<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                        <li ng-repeat="(k,filter) in filters.nbr_page"><span ng-click="changePage(filter)">{{filter}}</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="5">
+                    <span id="nbr_result">Nombre des résultats : {{total_result}} - Nombres de pages {{nbr_page}}</span>
+                  </td>
+                </tr>
+              </tfoot>
+          </table>
+
+          </form>
+
+          <table class="table">
+            <thead class="thead-inverse">
+              <tr>
+                <th>Action</th>
+                <th>URL</th>
+                <th>Type de page</th>
+                <th>Mot clé principal</th>
+                <th>Optimiser la page</th>
+              </tr>
+            </thead>
+            <tbody ng-show="pages.length" ng-cloak>
+              <tr ng-repeat="(k,page) in pages" ng-init="p = k">
+                <td><span class="input-group-btn"> <button ng-click="updatePages(p)" type="button" class="btn btn-default">Modifier</button></td>
+                <td>{{page.url}}</td>
+                <td>{{page.type}}</td>
+                <td><input ng-model="pages[p].info.keyword" type="text" class="form-control" ng-keyup="getSuggest(p)" value="{{page.info.keyword}}">
+                  <div class="suggest">
+                    <ul>
+                      <li ng-repeat="(a, suggest) in suggests[p]" ng-click="setKeyword(p, suggest)">{{suggest}}</li>
+                    </ul>
+                  </div></td>
+                <td><a ng-if="page.info.id_page" class="btn btn-default" href="#/page/{{page.info.id_page}}">Optimiser la page</a></td>
+            </tbody>
+          </table>
+          <div class="encart_check" ng-show="showajax">Page modifié avec succés !</div>
+
+        </div>
+
+</div>
