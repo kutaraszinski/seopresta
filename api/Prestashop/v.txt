@@ -1,0 +1,441 @@
+﻿object(SimpleXMLElement)#9 (1) {
+  ["product"]=>
+  object(SimpleXMLElement)#3 (62) {
+    ["id"]=>
+    string(1) "1"
+    ["id_manufacturer"]=>
+    string(1) "1"
+    ["id_supplier"]=>
+    string(1) "1"
+    ["id_category_default"]=>
+    string(1) "5"
+    ["new"]=>
+    object(SimpleXMLElement)#10 (0) {
+    }
+    ["cache_default_attribute"]=>
+    string(1) "1"
+    ["id_default_image"]=>
+    string(1) "1"
+    ["id_default_combination"]=>
+    string(1) "1"
+    ["id_tax_rules_group"]=>
+    string(1) "1"
+    ["position_in_category"]=>
+    string(1) "0"
+    ["manufacturer_name"]=>
+    string(20) "Fashion Manufacturer"
+    ["quantity"]=>
+    string(1) "0"
+    ["type"]=>
+    string(6) "simple"
+    ["id_shop_default"]=>
+    string(1) "1"
+    ["reference"]=>
+    string(6) "demo_1"
+    ["supplier_reference"]=>
+    object(SimpleXMLElement)#11 (0) {
+    }
+    ["location"]=>
+    object(SimpleXMLElement)#12 (0) {
+    }
+    ["width"]=>
+    string(8) "0.000000"
+    ["height"]=>
+    string(8) "0.000000"
+    ["depth"]=>
+    string(8) "0.000000"
+    ["weight"]=>
+    string(8) "0.000000"
+    ["quantity_discount"]=>
+    string(1) "0"
+    ["ean13"]=>
+    string(1) "0"
+    ["upc"]=>
+    object(SimpleXMLElement)#13 (0) {
+    }
+    ["cache_is_pack"]=>
+    string(1) "0"
+    ["cache_has_attachments"]=>
+    string(1) "0"
+    ["is_virtual"]=>
+    string(1) "0"
+    ["on_sale"]=>
+    string(1) "0"
+    ["online_only"]=>
+    string(1) "0"
+    ["ecotax"]=>
+    string(8) "0.000000"
+    ["minimal_quantity"]=>
+    string(1) "1"
+    ["price"]=>
+    string(9) "16.510000"
+    ["wholesale_price"]=>
+    string(8) "4.950000"
+    ["unity"]=>
+    object(SimpleXMLElement)#14 (0) {
+    }
+    ["unit_price_ratio"]=>
+    string(8) "0.000000"
+    ["additional_shipping_cost"]=>
+    string(4) "0.00"
+    ["customizable"]=>
+    string(1) "0"
+    ["text_fields"]=>
+    string(1) "0"
+    ["uploadable_files"]=>
+    string(1) "0"
+    ["active"]=>
+    string(1) "1"
+    ["redirect_type"]=>
+    string(3) "404"
+    ["id_product_redirected"]=>
+    string(1) "0"
+    ["available_for_order"]=>
+    string(1) "1"
+    ["available_date"]=>
+    string(10) "0000-00-00"
+    ["condition"]=>
+    string(3) "new"
+    ["show_price"]=>
+    string(1) "1"
+    ["indexed"]=>
+    string(1) "1"
+    ["visibility"]=>
+    string(4) "both"
+    ["advanced_stock_management"]=>
+    string(1) "0"
+    ["date_add"]=>
+    string(19) "2016-02-11 10:55:36"
+    ["date_upd"]=>
+    string(19) "2016-02-11 10:55:36"
+    ["pack_stock_type"]=>
+    string(1) "3"
+    ["meta_description"]=>
+    object(SimpleXMLElement)#15 (1) {
+      ["language"]=>
+      string(23) "meta description update"
+    }
+    ["meta_keywords"]=>
+    object(SimpleXMLElement)#16 (1) {
+      ["language"]=>
+      string(12) "test keyword"
+    }
+    ["meta_title"]=>
+    object(SimpleXMLElement)#17 (1) {
+      ["language"]=>
+      string(9) "blabla dd"
+    }
+    ["link_rewrite"]=>
+    object(SimpleXMLElement)#18 (1) {
+      ["language"]=>
+      string(30) "t-shirt-delave-manches-courtes"
+    }
+    ["name"]=>
+    object(SimpleXMLElement)#19 (1) {
+      ["language"]=>
+      string(35) "T-shirt délavé à manches courtes"
+    }
+    ["description"]=>
+    object(SimpleXMLElement)#20 (1) {
+      ["language"]=>
+      string(681) "<p>Fashion propose des vêtements de qualité depuis 2010. La marque propose une gamme féminine composée d'élégants vêtements à coordonner et de robes originales et offre désormais une collection complète de prêt-à-porter, regroupant toutes les pièces qu'une femme doit avoir dans sa garde-robe. Fashion se distingue avec des looks à la fois cool, simples et rafraîchissants, alliant élégance et chic, pour un style reconnaissable entre mille. Chacune des magnifiques pièces de la collection est fabriquée avec le plus grand soin en Italie. Fashion enrichit son offre avec une gamme d'accessoires incluant chaussures, chapeaux, ceintures et bien plus encore !</p>"
+    }
+    ["description_short"]=>
+    object(SimpleXMLElement)#21 (1) {
+      ["language"]=>
+      string(172) "<p>T-shirt délavé à manches courtes et col rond. Matière douce et extensible pour un confort inégalé. Pour un look estival, portez-le avec un chapeau de paille !</p>"
+    }
+    ["available_now"]=>
+    object(SimpleXMLElement)#22 (1) {
+      ["language"]=>
+      string(8) "En stock"
+    }
+    ["available_later"]=>
+    object(SimpleXMLElement)#23 (1) {
+      ["language"]=>
+      object(SimpleXMLElement)#25 (1) {
+        ["@attributes"]=>
+        array(1) {
+          ["id"]=>
+          string(1) "1"
+        }
+      }
+    }
+    ["associations"]=>
+    object(SimpleXMLElement)#24 (9) {
+      ["categories"]=>
+      object(SimpleXMLElement)#25 (2) {
+        ["@attributes"]=>
+        array(2) {
+          ["nodeType"]=>
+          string(8) "category"
+          ["api"]=>
+          string(10) "categories"
+        }
+        ["category"]=>
+        array(4) {
+          [0]=>
+          object(SimpleXMLElement)#34 (1) {
+            ["id"]=>
+            string(1) "2"
+          }
+          [1]=>
+          object(SimpleXMLElement)#35 (1) {
+            ["id"]=>
+            string(1) "3"
+          }
+          [2]=>
+          object(SimpleXMLElement)#36 (1) {
+            ["id"]=>
+            string(1) "4"
+          }
+          [3]=>
+          object(SimpleXMLElement)#37 (1) {
+            ["id"]=>
+            string(1) "5"
+          }
+        }
+      }
+      ["images"]=>
+      object(SimpleXMLElement)#26 (2) {
+        ["@attributes"]=>
+        array(2) {
+          ["nodeType"]=>
+          string(5) "image"
+          ["api"]=>
+          string(6) "images"
+        }
+        ["image"]=>
+        array(4) {
+          [0]=>
+          object(SimpleXMLElement)#37 (1) {
+            ["id"]=>
+            string(1) "1"
+          }
+          [1]=>
+          object(SimpleXMLElement)#36 (1) {
+            ["id"]=>
+            string(1) "2"
+          }
+          [2]=>
+          object(SimpleXMLElement)#35 (1) {
+            ["id"]=>
+            string(1) "3"
+          }
+          [3]=>
+          object(SimpleXMLElement)#34 (1) {
+            ["id"]=>
+            string(1) "4"
+          }
+        }
+      }
+      ["combinations"]=>
+      object(SimpleXMLElement)#27 (2) {
+        ["@attributes"]=>
+        array(2) {
+          ["nodeType"]=>
+          string(11) "combination"
+          ["api"]=>
+          string(12) "combinations"
+        }
+        ["combination"]=>
+        array(6) {
+          [0]=>
+          object(SimpleXMLElement)#34 (1) {
+            ["id"]=>
+            string(1) "1"
+          }
+          [1]=>
+          object(SimpleXMLElement)#35 (1) {
+            ["id"]=>
+            string(1) "2"
+          }
+          [2]=>
+          object(SimpleXMLElement)#36 (1) {
+            ["id"]=>
+            string(1) "3"
+          }
+          [3]=>
+          object(SimpleXMLElement)#37 (1) {
+            ["id"]=>
+            string(1) "4"
+          }
+          [4]=>
+          object(SimpleXMLElement)#38 (1) {
+            ["id"]=>
+            string(1) "5"
+          }
+          [5]=>
+          object(SimpleXMLElement)#39 (1) {
+            ["id"]=>
+            string(1) "6"
+          }
+        }
+      }
+      ["product_option_values"]=>
+      object(SimpleXMLElement)#28 (2) {
+        ["@attributes"]=>
+        array(2) {
+          ["nodeType"]=>
+          string(20) "product_option_value"
+          ["api"]=>
+          string(21) "product_option_values"
+        }
+        ["product_option_value"]=>
+        array(5) {
+          [0]=>
+          object(SimpleXMLElement)#39 (1) {
+            ["id"]=>
+            string(1) "1"
+          }
+          [1]=>
+          object(SimpleXMLElement)#38 (1) {
+            ["id"]=>
+            string(2) "13"
+          }
+          [2]=>
+          object(SimpleXMLElement)#37 (1) {
+            ["id"]=>
+            string(2) "14"
+          }
+          [3]=>
+          object(SimpleXMLElement)#36 (1) {
+            ["id"]=>
+            string(1) "2"
+          }
+          [4]=>
+          object(SimpleXMLElement)#35 (1) {
+            ["id"]=>
+            string(1) "3"
+          }
+        }
+      }
+      ["product_features"]=>
+      object(SimpleXMLElement)#29 (2) {
+        ["@attributes"]=>
+        array(2) {
+          ["nodeType"]=>
+          string(15) "product_feature"
+          ["api"]=>
+          string(16) "product_features"
+        }
+        ["product_feature"]=>
+        array(3) {
+          [0]=>
+          object(SimpleXMLElement)#35 (2) {
+            ["id"]=>
+            string(1) "5"
+            ["id_feature_value"]=>
+            string(1) "5"
+          }
+          [1]=>
+          object(SimpleXMLElement)#36 (2) {
+            ["id"]=>
+            string(1) "6"
+            ["id_feature_value"]=>
+            string(2) "11"
+          }
+          [2]=>
+          object(SimpleXMLElement)#37 (2) {
+            ["id"]=>
+            string(1) "7"
+            ["id_feature_value"]=>
+            string(2) "17"
+          }
+        }
+      }
+      ["tags"]=>
+      object(SimpleXMLElement)#30 (1) {
+        ["@attributes"]=>
+        array(2) {
+          ["nodeType"]=>
+          string(3) "tag"
+          ["api"]=>
+          string(4) "tags"
+        }
+      }
+      ["stock_availables"]=>
+      object(SimpleXMLElement)#31 (2) {
+        ["@attributes"]=>
+        array(2) {
+          ["nodeType"]=>
+          string(15) "stock_available"
+          ["api"]=>
+          string(16) "stock_availables"
+        }
+        ["stock_available"]=>
+        array(7) {
+          [0]=>
+          object(SimpleXMLElement)#37 (2) {
+            ["id"]=>
+            string(1) "1"
+            ["id_product_attribute"]=>
+            string(1) "0"
+          }
+          [1]=>
+          object(SimpleXMLElement)#36 (2) {
+            ["id"]=>
+            string(1) "8"
+            ["id_product_attribute"]=>
+            string(1) "1"
+          }
+          [2]=>
+          object(SimpleXMLElement)#35 (2) {
+            ["id"]=>
+            string(1) "9"
+            ["id_product_attribute"]=>
+            string(1) "2"
+          }
+          [3]=>
+          object(SimpleXMLElement)#38 (2) {
+            ["id"]=>
+            string(2) "10"
+            ["id_product_attribute"]=>
+            string(1) "3"
+          }
+          [4]=>
+          object(SimpleXMLElement)#39 (2) {
+            ["id"]=>
+            string(2) "11"
+            ["id_product_attribute"]=>
+            string(1) "4"
+          }
+          [5]=>
+          object(SimpleXMLElement)#34 (2) {
+            ["id"]=>
+            string(2) "12"
+            ["id_product_attribute"]=>
+            string(1) "5"
+          }
+          [6]=>
+          object(SimpleXMLElement)#40 (2) {
+            ["id"]=>
+            string(2) "13"
+            ["id_product_attribute"]=>
+            string(1) "6"
+          }
+        }
+      }
+      ["accessories"]=>
+      object(SimpleXMLElement)#32 (1) {
+        ["@attributes"]=>
+        array(2) {
+          ["nodeType"]=>
+          string(7) "product"
+          ["api"]=>
+          string(8) "products"
+        }
+      }
+      ["product_bundle"]=>
+      object(SimpleXMLElement)#33 (1) {
+        ["@attributes"]=>
+        array(2) {
+          ["nodeType"]=>
+          string(7) "product"
+          ["api"]=>
+          string(8) "products"
+        }
+      }
+    }
+  }
+}
